@@ -1,0 +1,22 @@
+IndexOptions +Charset=UTF-8
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^signup$ ./signup.php [L]
+RewriteRule ^login$ ./login.php [L]
+RewriteRule ^reset$ ./reset.php [L]
+RewriteRule ^makeABooking$ ./makeABooking.php [L]
+RewriteRule ^fleets$ ./fleets.php [L]
+RewriteRule ^viewFleet/(.*)$ ./viewFleet.php?fid=$1 [L]
+RewriteRule ^career$ ./career.php [L]
+RewriteRule ^viewJob/(.*)$ ./viewJob.php?jid=$1 [L]
+RewriteRule ^apply/(.*)$ ./apply.php?jid=$1 [L]
+RewriteRule ^career/(.*)/(.*)$ ./career.php?page=$1&srch=$2 [L]
+RewriteRule ^conformContact/(.*)/(.*)$ ./conformContact.php?bid=$1&status=$2 [L]
+RewriteRule ^conformBooking/(.*)/(.*)$ ./conformBooking.php?bid=$1&status=$2 [L]
+RewriteRule ^profile/(.*)/(.*)/(.*)$ ./profile.php?tab=$1&page=$2&srch=$3 [L]
+RewriteRule ^viewBooking/(.*)$ ./viewBooking.php?bid=$1 [L]
+RewriteRule ^contact$ ./contact.php [L]
+RewriteRule ^page/(.*)$ ./page.php?pid=$1 [L]
+</IfModule>
